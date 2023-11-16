@@ -1,9 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 
-const useAPIFetch = (url: string) => {
+
+
+const useGet = (url: string) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<any>(null);
@@ -18,10 +19,8 @@ const useAPIFetch = (url: string) => {
         const headers = {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + token
+          'Authorization': 'Bearer ' + token,
         };
-
-        console.log(headers);
 
         const requestOptions = {
           method: 'GET',

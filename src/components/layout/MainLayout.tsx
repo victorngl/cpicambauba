@@ -6,13 +6,16 @@ interface MainLayoutProps {
     children?: React.ReactNode
 }
 
-const MainLayout: FC<MainLayoutProps> = ({children}) => {
+const MainLayout: FC<MainLayoutProps> = ({ children }) => {
     return (
         <>
-        <Sidebar>
-            {children}
-            <Footer />
-        </Sidebar>
+
+            <Sidebar>
+                {children}
+                <Footer />
+            </Sidebar >
+
+
         </>
     )
 }

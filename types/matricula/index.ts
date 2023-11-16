@@ -1,4 +1,4 @@
-export type Rematricula = {
+export type Matricula = {
     id?: string,
     name: string,
     age?: string,

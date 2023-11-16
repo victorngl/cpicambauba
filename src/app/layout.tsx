@@ -4,6 +4,9 @@ import { Inter } from 'next/font/google'
 import { NextAuthProvider } from './providers'
 import AuthChecker from '@/components/auth/authchecker'
 import MainLayout from '@/components/layout/MainLayout'
+import { ToastContainer } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,13 +23,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NextAuthProvider>
-        {/* <AuthChecker> */}
+        
+          <NextAuthProvider>
+            {/* <AuthChecker> */}
             <MainLayout>
               {children}
             </MainLayout>
-         {/* </AuthChecker> */}
-        </NextAuthProvider>
+            <ToastContainer />
+            {/* </AuthChecker> */}
+          </NextAuthProvider>
+        
       </body>
     </html>
   )
