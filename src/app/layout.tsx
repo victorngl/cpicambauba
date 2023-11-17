@@ -5,8 +5,7 @@ import { NextAuthProvider } from './providers'
 import AuthChecker from '@/components/auth/authchecker'
 import MainLayout from '@/components/layout/MainLayout'
 import { ToastContainer } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-
+import 'react-toastify/dist/ReactToastify.css';
 
 const inter = Inter({ subsets: ['latin'] })
 

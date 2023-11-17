@@ -1,10 +1,12 @@
 'use client'
+
 import { Matricula } from "../../../../types/matricula";
 import Link from "next/link";
 import { SearchField } from "@/components/utils/SearchField";
 import { useMemo, useState } from "react";
 
 const MatriculaTable = ({ matriculas }: { matriculas: Matricula[] }) => {
+
     const [search, setSearch] = useState({
         term: '',
         by: 'name'
@@ -20,7 +22,7 @@ const MatriculaTable = ({ matriculas }: { matriculas: Matricula[] }) => {
                 .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
                 .includes(lowerBusca))
     }, [search.term, matriculas, search.by])
-
+    
     return (
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg ">
             <div className="flex items-center gap-2 mb-2">
@@ -33,12 +35,9 @@ const MatriculaTable = ({ matriculas }: { matriculas: Matricula[] }) => {
                         <option value="class">Turma</option>
                         <option value="nextcourse">Série pretendida</option>
                         <option value="alimentation">Alimentação</option>
-
                         <option value="quota">Cota-Parte</option>
                         <option value="regime">Regime</option>
-
                         <option value="financy">Financeiro</option>
-
                     </select>
 
                 </div>
@@ -121,7 +120,7 @@ const MatriculaTable = ({ matriculas }: { matriculas: Matricula[] }) => {
                                 </td>
 
                                 <td className="px-6 py-4">
-                                    <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline" href={`matricula/edit/${matricula.id}`}>Edit </Link>
+                                    <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline" href={`matricula/edit/${matricula.id}`}>Editar</Link>
                                 </td>
                             </tr>
                         )

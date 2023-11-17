@@ -59,11 +59,6 @@ const MatriculaForm = ({ matricula }: { matricula?: Matricula }) => {
 
   }
 
-
-
-
-
-
   return (
     <>
       <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
@@ -159,25 +154,29 @@ const MatriculaForm = ({ matricula }: { matricula?: Matricula }) => {
         </div>
         <div className="mb-6">
           <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" htmlFor="Regime">Regime</label>
-          <input
+          <select
             {...register('regime')}
-            type="text"
             id="Regime"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Regime"
-          />
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <option value="Não se aplica">Não se aplica</option>
+            <option value="Integral">Integral</option>
+            <option value="Parcial(manhã)">Parcial(manhã)</option>
+            <option value="Parcial(tarde)">Parcial(tarde)</option>
+          </select>
+
           {errors.regime && <p className="text-red-500 text-xs mt-2">{errors.regime.message}</p>}
         </div>
         <div className="mb-6">
           <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" htmlFor="Financeiro">Financeiro</label>
-          <input
+          {/* create a select with option "Pagante" and "Bolsista" */}
+          <select
             {...register('financy')}
-            type="text"
             id="Financeiro"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Financeiro"
-            required
-          />
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <option value="Pagante">Pagante</option>
+            <option value="Gratuidade">Gratuidade</option>
+          </select>
+         
           {errors.financy && <p className="text-red-500 text-xs mt-2">{errors.financy.message}</p>}
         </div>
         <div className="mb-6">
