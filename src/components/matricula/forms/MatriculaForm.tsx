@@ -21,7 +21,8 @@ const schema = z.object({
   financy: z.string(),
   quota: z.coerce.number(),
   alimentation: z.string().optional(),
-  nextcourse: z.string().optional().nullable()
+  nextcourse: z.string().optional().nullable(),
+  renew: z.boolean().optional().nullable(),
 });
 
 
@@ -179,6 +180,21 @@ const MatriculaForm = ({ matricula }: { matricula?: Matricula }) => {
          
           {errors.financy && <p className="text-red-500 text-xs mt-2">{errors.financy.message}</p>}
         </div>
+
+        <div className="mb-6">
+          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" htmlFor="Financeiro">Tipo de Matrícula</label>
+          {/* create a select with option "Pagante" and "Bolsista" */}
+          <select
+            {...register('renew')}
+            id="renew"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <option value="true">Renovação</option>
+            <option value="false">Matrícula Nova</option>
+          </select>
+         
+          {errors.financy && <p className="text-red-500 text-xs mt-2">{errors.financy.message}</p>}
+        </div>
+       
         <div className="mb-6">
           <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" htmlFor="Financeiro">Parcelamento Cota-parte</label>
           <input

@@ -12,4 +12,5 @@ export type Matricula = {
     alimentation?: string,
     nextcourse?: string,
     regime?: string,
+    renew?: boolean,
 }

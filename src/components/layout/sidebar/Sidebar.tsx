@@ -21,7 +21,6 @@ const SidebarItemsRoutes = [
 const Sidebar: FC<SiderbarProps> = ({ children }) => {
     return (
         <>
-
             <button
                 data-drawer-target="logo-sidebar"
                 data-drawer-toggle="logo-sidebar"
@@ -65,7 +64,6 @@ const Sidebar: FC<SiderbarProps> = ({ children }) => {
 
 
                         {SidebarItems.map((item, index) => (
-                            <>
                                 <li key={index}>
                                     <Link
                                         href={`/${SidebarItemsRoutes[index]}`}
@@ -84,7 +82,6 @@ const Sidebar: FC<SiderbarProps> = ({ children }) => {
                                         <span className="ml-3">{item}</span>
                                     </Link>
                                 </li>
-                            </>
                         ))
                         }
                  {/*}
@@ -226,9 +223,11 @@ const Sidebar: FC<SiderbarProps> = ({ children }) => {
                     </ul >
                 </div>
             </aside >
+            
             <div className="p-4 sm:ml-64">
                 <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
                     <div className="grid grid-cols-3 gap-4">
+                        {/*
                         <div className="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
                             <p className="text-2xl text-gray-400 dark:text-gray-500">
                                 <svg
@@ -286,6 +285,7 @@ const Sidebar: FC<SiderbarProps> = ({ children }) => {
                                 </svg>
                             </p>
                         </div>
+                */}
                     </div>
                     
                     <div className="grid grid-cols-1">
@@ -296,7 +296,6 @@ const Sidebar: FC<SiderbarProps> = ({ children }) => {
 
 
         </>
-
     )
 }
 
